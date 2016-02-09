@@ -1,14 +1,16 @@
 #include <SFML/Graphics.hpp>
-//#include "sfml-game-test.reborn/main.cpp"   
+
+
 int main()
 {
+
 	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
 	sf::CircleShape shape(100.f);
 	shape.setFillColor(sf::Color::Green);
-
+	 sf::Event event;
 	while (window.isOpen())
-	{							 /////////////////////////	  222  test line
-		sf::Event event;
+	{
+		
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
@@ -17,8 +19,8 @@ int main()
 
 		window.clear();
 		window.draw(shape);
-		window.display();
-	}
+		window.display();  
+	}							  
 
 	return 0;
 }
