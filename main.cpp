@@ -7,7 +7,7 @@ int main()
 	shape.setFillColor(sf::Color::Green);
 
 	while (window.isOpen())
-	{							 /////////////////////////	   test line
+	{							 /////////////////////////	  2  test line
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
