@@ -6,7 +6,7 @@
 
 using namespace sf;
 
-class startMenu {
+class startMenu {							  
 public:
 	startMenu(RenderWindow &win);
 	void runMenu();//рабочий цикл стартового меню
