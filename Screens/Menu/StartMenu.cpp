@@ -10,25 +10,22 @@ startMenu::startMenu(RenderWindow &window) :
 	_ButtFocus = start;
 }
 
-void startMenu::update( float time) {
-	_start.update(time, _window);
-	_options.update(time, _window);
-	_autors.update(time, _window);
-	_quit.update(time, _window);
+void startMenu::update( ) {
+	_start.update( _window);
+	_options.update( _window);
+	_autors.update( _window);
+	_quit.update( _window);
 }
 
 void startMenu::runMenu() {
-	Clock clock;
 	while (_window.isOpen()) {
-		float time = clock.getElapsedTime().asMicroseconds() / 800;
-		clock.restart();
 		if (menuControl()) return;
 		if (_ButtFocus == start) { _start.setFocus(true); _options.setFocus(false); _autors.setFocus(false); _quit.setFocus(false); }
 		if (_ButtFocus == option) { _start.setFocus(false); _options.setFocus(true); _autors.setFocus(false); _quit.setFocus(false); }
 		if (_ButtFocus == autors) { _start.setFocus(false); _options.setFocus(false); _autors.setFocus(true); _quit.setFocus(false); }
 		if (_ButtFocus == quit) { _start.setFocus(false); _options.setFocus(false); _autors.setFocus(false); _quit.setFocus(true); }
 		_window.clear();
-		update(time);
+		update();
 		_window.display();
 	}
 }
@@ -39,8 +36,10 @@ bool startMenu::menuControl() {
 			if (event.type == Event::KeyReleased) {
 				if (event.key.code == Keyboard::Up)
 					if (_ButtFocus != start) _ButtFocus = Button_focus(_ButtFocus - 1);
+					else _ButtFocus = quit;
 				if (event.key.code == Keyboard::Down)
 					if (_ButtFocus != quit) _ButtFocus = Button_focus(_ButtFocus + 1);
+					else _ButtFocus = start;
 				if (event.key.code == Keyboard::Return) {
 					switch (_ButtFocus) {
 					case start:
