@@ -4,9 +4,12 @@
 int main()
 {
 	
-	/* new Game().run(); */
+	/* new Game().run(); */		
+	
+	// все ,что ниже - только для теста 
 	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
-			   // все ,что ниже - только для теста !!!-!
+			   
+
 	startMenu menu(window);
 	while (window.isOpen())
 	{
