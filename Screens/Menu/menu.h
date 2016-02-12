@@ -12,7 +12,7 @@ public:
 	Button(String text, float position_x, float position_y, unsigned int character_size = 30);
 	FloatRect getGlobalBounds();
 	void setFocus(bool focus);
-	void update(float time, RenderWindow &window);
+	void update(RenderWindow &window);
 	void setCharacterSize(int size);
 	int getCharacterSize();
 	bool _isClicked;//была ли кнопка нажата
