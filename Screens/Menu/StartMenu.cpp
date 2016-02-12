@@ -1,7 +1,7 @@
 #include"StartMenu.h"
 
 startMenu::startMenu(RenderWindow &window) :
-	_start("Старт", Vector2f(window.getView().getSize().x / 2.5, window.getView().getSize().y / 2.5), 50),
+	_start("Старт", Vector2f(window.getView().getSize().x / 2.5f, window.getView().getSize().y / 2.5f), 50),
 	_options("Настройки", Vector2f(_start.getGlobalBounds().left, _start.getGlobalBounds().top + _start.getGlobalBounds().height), 50),
 	_autors("Авторы", Vector2f(_start.getGlobalBounds().left, _options.getGlobalBounds().top + _options.getGlobalBounds().height), 50),
 	_quit("Выход", Vector2f(_start.getGlobalBounds().left, _autors.getGlobalBounds().top + _autors.getGlobalBounds().height), 50),
