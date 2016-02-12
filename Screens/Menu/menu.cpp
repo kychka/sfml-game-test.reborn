@@ -4,14 +4,14 @@
 
 Button::Button(String text, Vector2f position, unsigned int character_size)
 {
-	_font.loadFromFile("sfml-game-test.reborn/Screens/StartMenu/CyrilicOld.ttf");
+	_font.loadFromFile("sfml-game-test.reborn/Screens/Menu/CyrilicOld.ttf");
 	_text = Text(text, _font, character_size);
 	_text.setPosition(position);
 	_focus = false;
 	_isClicked = false;
 }
 Button::Button(String text, float position_x, float position_y, unsigned int character_size) {
-	_font.loadFromFile("sfml-game-test.reborn/Screens/StartMenu/CyrilicOld.ttf");
+	_font.loadFromFile("sfml-game-test.reborn/Screens/Menu/CyrilicOld.ttf");
 	_text = Text(text, _font, character_size);
 	_text.setPosition(Vector2f(position_x, position_y));
 	_focus = false;
@@ -38,7 +38,7 @@ FloatRect Button::getGlobalBounds() {
 	return _text.getGlobalBounds();
 }
 
-void Button::update(float time, RenderWindow &window) {
+void Button::update(RenderWindow &window) {
 
 	draw(window);
 }
