@@ -1,24 +1,31 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <iostream>
-#include "MainGameClass/Game.h"
 
+#include "MainGameClass/Game.h"
+#include "Screens/Menu/pauseMenu.h"
 #include "Screens/Menu/StartMenu.h"
 #include "Animation/IAnimation.h"
 #include "Animation/AnimationClass.h"
 using namespace sf;
 
 
-#include "Screens/Menu/pauseMenu.h"
+
 
 int main()
 {
-				  
-	/* new Game().run(); */		
+	
+	Configuration config;
+	config.width = 1024;
+	config.height = 612;
+	config.fullscreen = false;
+
+	Game game(config);
+	game.runGame();
 	
 
 	// все ,что ниже - только для теста 
-	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
+/*	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
 	Texture texture;
 
 	window.setFramerateLimit(60);
@@ -58,6 +65,6 @@ int main()
 		  ExplosionAnimation->update(time);
 		  ExplosionAnimation->draw(150.f, 150.f, window);
 		  window.display();
-	  }
+	  }			*/
 	return 0;
 }

@@ -1,7 +1,7 @@
 #ifndef STARTMENU_H
 #define STARTMENU_H
 
-#include"menu.h"
+#include"Button.h"
 #include <SFML/Graphics.hpp>
 
 using namespace sf;
