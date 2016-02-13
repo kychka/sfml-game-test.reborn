@@ -22,6 +22,7 @@ private:
 	Text _text;
 	Font _font;
 	bool _focus;//выбрана ли кнопка 
+	
 };
 
 #endif
