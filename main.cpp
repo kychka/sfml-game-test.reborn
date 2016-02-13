@@ -20,13 +20,15 @@ int main()
 	// все ,что ниже - только для теста 
 	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
 	Texture texture;
+
+	window.setFramerateLimit(60);
 	if (!texture.loadFromFile("sfml-game-test.reborn/Resourses/Explosion.png"))
 	{
 		std::cout << " download failed! ";
 		exit(123);
 	}	 
 
-	 window.setFramerateLimit(60);
+	//startMenu menu(window);
 	IAnimation *ExplosionAnimation = new AnimationClass(texture, 4, 4, 2000.f, 0, 0, 64, 64);
 
 	sf::Event event;
@@ -49,7 +51,7 @@ int main()
 			  }
 		  }
 
-		  //menu.runMenu();
+		 // menu.runMenu();
 
 		  window.clear();
 
