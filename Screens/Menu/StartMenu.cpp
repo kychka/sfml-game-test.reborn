@@ -1,33 +1,51 @@
 #include"StartMenu.h"
 
-startMenu::startMenu(RenderWindow &window) :
+
+ 
+startMenu::startMenu(RenderWindow &window) : 
 	_start("Старт", Vector2f(window.getView().getSize().x / 2.5f, window.getView().getSize().y / 2.5f), 50),
 	_options("Настройки", Vector2f(_start.getGlobalBounds().left, _start.getGlobalBounds().top + _start.getGlobalBounds().height), 50),
 	_autors("Авторы", Vector2f(_start.getGlobalBounds().left, _options.getGlobalBounds().top + _options.getGlobalBounds().height), 50),
-	_quit("Выход", Vector2f(_start.getGlobalBounds().left, _autors.getGlobalBounds().top + _autors.getGlobalBounds().height), 50),
+	_quit("Выход", Vector2f(_start.getGlobalBounds().left, _autors.getGlobalBounds().top + _autors.getGlobalBounds().height), 50),	
 	_window(window)
 {
+	
 	_ButtFocus = start;
 }
 
-void startMenu::update( ) {
-	_start.update( _window);
-	_options.update( _window);
-	_autors.update( _window);
-	_quit.update( _window);
+void startMenu::handleInput()
+{
+	
 }
 
-void startMenu::runMenu() {
+void startMenu::update() {
+	
+}
+
+
+
+void startMenu::draw() {
 	while (_window.isOpen()) {
 		if (menuControl()) return;
 		if (_ButtFocus == start) { _start.setFocus(true); _options.setFocus(false); _autors.setFocus(false); _quit.setFocus(false); }
 		if (_ButtFocus == option) { _start.setFocus(false); _options.setFocus(true); _autors.setFocus(false); _quit.setFocus(false); }
 		if (_ButtFocus == autors) { _start.setFocus(false); _options.setFocus(false); _autors.setFocus(true); _quit.setFocus(false); }
 		if (_ButtFocus == quit) { _start.setFocus(false); _options.setFocus(false); _autors.setFocus(false); _quit.setFocus(true); }
-		_window.clear();
-		update();
+		
+		_window.clear(Color(0, 132, 221, 146));
+		drawButtons();
 		_window.display();
 	}
+}
+
+void startMenu::drawButtons()
+{	
+	  
+	_start.draw(_window);
+	_options.draw( _window);
+	_autors.draw( _window);
+	_quit.draw( _window);
+	
 }
 
 bool startMenu::menuControl() {
@@ -63,5 +81,9 @@ bool startMenu::menuControl() {
 	return false;
 
 }
+
+
+
+
 
 

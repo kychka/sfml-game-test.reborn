@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "../Screens/Menu/StartMenu.h"
 #include <SFML/Graphics.hpp>
 
 
@@ -10,14 +11,18 @@ Game::Game(Configuration &config)
 
 void Game::runGame()
 {
-	while (window->isOpen()) {
+	startMenu menu(*window);
 
+	while (window->isOpen()) {
+		menu.draw();
 		 handleInput();
 		 update();
-		 draw();
+		draw();
 	}
 	
 }
+
+
 
 void Game::handleInput()
 {
@@ -33,12 +38,15 @@ void Game::update()
 
 void Game::draw()
 {
-	window->clear(Color(0, 231, 0, 133));
+	window->clear(Color(0, 168, 0, 133));
 	window->display();
 }
 
 
+void Game::computeDelta()
+{
 
+}
 
 Game::~Game()
 {

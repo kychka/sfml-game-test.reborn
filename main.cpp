@@ -7,6 +7,7 @@
 #include "Screens/Menu/StartMenu.h"
 #include "Animation/IAnimation.h"
 #include "Animation/AnimationClass.h"
+
 using namespace sf;
 
 
@@ -19,9 +20,10 @@ int main()
 	config.width = 1024;
 	config.height = 612;
 	config.fullscreen = false;
+	config.window_title = "Alpha_Project_OnTesting";
 
 	Game game(config);
-	game.runGame();
+	game.runGame();	 
 	
 
 	// все ,что ниже - только для теста 
@@ -35,8 +37,7 @@ int main()
 		exit(123);
 	}	 
 
-	//startMenu menu(window);
-	IAnimation *ExplosionAnimation = new AnimationClass(texture, 4, 4, 2000.f, 0, 0, 64, 64);
+	startMenu menu(window);
 
 	sf::Event event;
 	  Clock clock;
@@ -58,13 +59,12 @@ int main()
 			  }
 		  }
 
-		 // menu.runMenu();
+		//  menu.runMenu();
 
-		  window.clear();
+		 // window.clear();
 
-		  ExplosionAnimation->update(time);
-		  ExplosionAnimation->draw(150.f, 150.f, window);
-		  window.display();
-	  }			*/
+		 
+		 // window.display();
+	  }			  */
 	return 0;
 }

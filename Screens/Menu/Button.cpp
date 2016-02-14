@@ -2,6 +2,10 @@
 #include <iostream>
 
 
+Button::Button()
+{
+}
+
 Button::Button(String text, Vector2f position, unsigned int character_size)
 {
 	_font.loadFromFile("sfml-game-test.reborn/Resourses/CyrilicOld.ttf");
@@ -29,6 +33,7 @@ void Button::draw(RenderWindow &window) {
 	else _text.setColor(Color::Blue);
 	
 	window.draw(_text);
+	std::cout << "here" << std::endl;
 }
 void Button::setFocus(bool focus) {
 	_focus = focus;
@@ -38,9 +43,9 @@ FloatRect Button::getGlobalBounds() {
 	return _text.getGlobalBounds();
 }
 
-void Button::update(RenderWindow &window) {
+void Button::update() {
 
-	draw(window);
+	
 }
 
 void Button::setCharacterSize(int size) {

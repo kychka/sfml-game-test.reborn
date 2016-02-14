@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <SFML/Graphics.hpp>
+
 using namespace sf;
 
 struct Configuration
@@ -19,6 +20,8 @@ private:
 	Event event;
 	Clock clock;
 	float delta;
+
+	void computeDelta();
 
 	void handleInput();
 	void update();

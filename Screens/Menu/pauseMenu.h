@@ -1,16 +1,18 @@
 #pragma once
 
-#include"Button.h"
+#include "Button.h"
 #include <SFML/Graphics.hpp>
+#include "../AbstractScreen/abstractScreen.h"
 
 using namespace sf;
 
-class pauseMenu {
+class pauseMenu : public AbstractScreen{
 public:
 	pauseMenu(RenderWindow &window);
-	void runMenu();
-	void update();
-	void draw();
+	
+	virtual void handleInput() override;
+	virtual void update() override;
+	virtual void draw() override;
 private:
 	Button _start;
 	Button _quit;
@@ -18,7 +20,7 @@ private:
 	Event _event;
 	enum Button_Focus{start,quit};
 	Button_Focus _ButtFocus;
-
+	void drawButtons();
 	bool menuControl();
 
 };
