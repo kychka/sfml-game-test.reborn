@@ -1,18 +1,18 @@
-
-
+#include <memory>
 
 #include "AnimationClass.h"
 #include <iostream>
 
-
+using namespace std;
 AnimationClass::AnimationClass()
 {
 }
 
 AnimationClass::AnimationClass(sf::Texture &texture, int frameCountX, int frameCountY, float cycleFrame, int x, int y, int w, int h)
 {
-	frames = std::vector<sf::Sprite*>();
-	std::fill(frames.begin(), frames.end(), nullptr);// 	специальный тип nullptr из с++11. его можно присваивать указателям и избегать проблем с 0 и null
+	
+	frames =  std::vector<shared_ptr<sf::Sprite> >();
+
 	if (frameCountY <= 0) { frameCountY = 1; this->frameCountY = frameCountY; }
 	if (frameCountX <= 0) { frameCountX = 1; this->frameCountX = frameCountX; }
 
@@ -25,7 +25,8 @@ AnimationClass::AnimationClass(sf::Texture &texture, int frameCountX, int frameC
 
 		for (int j = 0; j < frameCountX; ++j) {// добавляем в frames каждый раз новый textureRegion
 											   // где i * frameWidth это начало вырезания кадра из текстуры
-			frames.push_back(new sf::Sprite(texture, sf::IntRect(x + (frameWidth*j), y + (frameHeight*i), frameWidth, frameHeight)));
+			
+			frames.push_back(make_shared<sf::Sprite>(sf::Sprite(texture, sf::IntRect(x + (frameWidth*j), y + (frameHeight*i), frameWidth, frameHeight))));
 		}
 	}
 
@@ -47,6 +48,10 @@ void AnimationClass::flip(bool flipX, bool flipY)
 
 void AnimationClass::setSize(int width, int height)
 {
+	for (auto v : frames) {
+
+		v->setScale(width/v->getGlobalBounds().width, height/v->getGlobalBounds().height);
+	}
 }
 
 void AnimationClass::update(float deltaTime)
@@ -65,7 +70,7 @@ void AnimationClass::update(float deltaTime)
 
 void AnimationClass::draw(float posX, float posY, sf::RenderWindow &window)
 {
-	sf::Sprite *s = frames[frame];
+	std::shared_ptr<sf::Sprite> s = frames[frame];
 
 	s->setPosition(posX, posY);
 	window.draw(*s);

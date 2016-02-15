@@ -1,9 +1,10 @@
 #pragma once
 #include "IAnimation.h"
+
 class AnimationClass : public IAnimation
 {
 private:
-	 std::vector<sf::Sprite*> frames;
+	 std::vector<std::shared_ptr<sf::Sprite> > frames;
 	 float maxFrameTime; // длительность отображения одного кадра
 	 float currentFrameTime; // время отображения текущего кадра
 	 int frameCountX; // количество кадров анимации по иксу на спрайт-листе
