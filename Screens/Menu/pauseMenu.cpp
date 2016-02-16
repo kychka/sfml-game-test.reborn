@@ -28,7 +28,7 @@ bool pauseMenu::menuControl() {
 				{
 				case start:
 
-					ScreenManager::setCurrentScreen("startMenu");
+				ScreenManager::setCurrentScreen("startMenu");
 					return true;
 						break;
 				case quit:
@@ -62,11 +62,10 @@ void pauseMenu::update(float delta)
 
 void pauseMenu::draw() {
 	
-	
-		if (menuControl())return;
-		if (_ButtFocus == start) { _start.setFocus(true); _quit.setFocus(false); }
-		if (_ButtFocus == quit) { _start.setFocus(false); _quit.setFocus(true); }
+	if (menuControl())return;
+	if (_ButtFocus == start) { _start.setFocus(true); _quit.setFocus(false); }
+	if (_ButtFocus == quit) { _start.setFocus(false); _quit.setFocus(true); }
 
-		drawButtons();
+	drawButtons();
 }
 

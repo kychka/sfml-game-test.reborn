@@ -1,6 +1,6 @@
 #include"StartMenu.h"
 
-
+#include <iostream>
  
 startMenu::startMenu(RenderWindow &window, Event &event) : 
 	_start("Старт", Vector2f(window.getView().getSize().x / 2.5f, window.getView().getSize().y / 2.5f), 50),
@@ -27,16 +27,14 @@ void startMenu::update(float delta) {
 
 
 void startMenu::draw() {
-	while (_window.isOpen()) {
-		if (menuControl()) return;
-		if (_ButtFocus == start) { _start.setFocus(true); _options.setFocus(false); _autors.setFocus(false); _quit.setFocus(false); }
-		if (_ButtFocus == option) { _start.setFocus(false); _options.setFocus(true); _autors.setFocus(false); _quit.setFocus(false); }
-		if (_ButtFocus == autors) { _start.setFocus(false); _options.setFocus(false); _autors.setFocus(true); _quit.setFocus(false); }
-		if (_ButtFocus == quit) { _start.setFocus(false); _options.setFocus(false); _autors.setFocus(false); _quit.setFocus(true); }
-		
-		drawButtons();
 
-	}
+	if (menuControl()) return;
+	if (_ButtFocus == start) { _start.setFocus(true); _options.setFocus(false); _autors.setFocus(false); _quit.setFocus(false); }
+	if (_ButtFocus == option) { _start.setFocus(false); _options.setFocus(true); _autors.setFocus(false); _quit.setFocus(false); }
+	if (_ButtFocus == autors) { _start.setFocus(false); _options.setFocus(false); _autors.setFocus(true); _quit.setFocus(false); }
+	if (_ButtFocus == quit) { _start.setFocus(false); _options.setFocus(false); _autors.setFocus(false); _quit.setFocus(true); }
+		
+	drawButtons();
 }  
 
 void startMenu::drawButtons()
@@ -50,7 +48,9 @@ void startMenu::drawButtons()
 }
 
 bool startMenu::menuControl() {
+	//std::cout << "in menu control 1" << std::endl;
 	while (_window.pollEvent(_event)) {
+		std::cout << "in menu control 2" << std::endl;
 			if (_event.type == Event::Closed) _window.close();
 			if (_event.type == Event::KeyReleased) {
 				if (_event.key.code == Keyboard::Up)
@@ -62,6 +62,7 @@ bool startMenu::menuControl() {
 				if (_event.key.code == Keyboard::Return) {
 					switch (_ButtFocus) {
 					case start:
+						ScreenManager::setCurrentScreen("pauseMenu");
 						return true;
 						break;
 					case option:
@@ -82,9 +83,4 @@ bool startMenu::menuControl() {
 	return false;
 
 }
-
-
-
-
-
 
