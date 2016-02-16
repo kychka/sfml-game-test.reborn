@@ -8,6 +8,7 @@
 #include "../../MainGameClass/GameConfiguration.h"
 #include "../Menu/pauseMenu.h"
 #include "../Menu/StartMenu.h"
+#include "../GameplayScreen/GameplayScreen.h"
 
 class  ScreenManager
 {

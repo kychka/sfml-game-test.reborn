@@ -29,11 +29,12 @@ void Game::runGame(){
 
 void Game::handleInput(){
 
-
+	ScreenManager::handleInput();
 }
 
 void Game::update(){
-
+	
+	ScreenManager::update(delta);
 }
 
 void Game::draw(){

@@ -5,23 +5,25 @@
 
 
 
-GameplayScreen::GameplayScreen(sf::RenderWindow &window, sf::Event &event)
+GameplayScreen::GameplayScreen(sf::RenderWindow &window, sf::Event &event) : 
+	_window(window), _event(event)
 {
+
 
 }
 
-GameplayScreen::~GameplayScreen()
-{
+GameplayScreen::~GameplayScreen(){
+
 }
 
-void GameplayScreen::handleInput()
-{
+void GameplayScreen::handleInput(){
+
 }
 
-void GameplayScreen::update(float delta)
-{
+void GameplayScreen::update(float delta){
+
 }
 
-void GameplayScreen::draw()
-{
+void GameplayScreen::draw(){
+
 }
