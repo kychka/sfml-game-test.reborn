@@ -7,10 +7,10 @@ public:
 
 	
 	
-	AbstractScreen() {};
-   // может потом пригодится
+	AbstractScreen() {};	// может  пригодится
+   
 	virtual void handleInput() = 0;
-	virtual void update() = 0;
+	virtual void update(float delta) = 0;
 	virtual void draw() = 0;
 	virtual ~AbstractScreen() {}
 };

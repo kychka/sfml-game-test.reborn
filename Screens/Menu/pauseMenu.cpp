@@ -1,12 +1,12 @@
 #include "pauseMenu.h"
-
-pauseMenu::pauseMenu(RenderWindow &window) : _window(window),
+#include <iostream>
+pauseMenu::pauseMenu(RenderWindow &window, Event &event) :
 _start("Продолжить", Vector2f(window.getView().getSize().x / 2.5, window.getView().getSize().y / 2.5), 50),
-_quit("Выход", Vector2f(_start.getGlobalBounds().left, _start.getGlobalBounds().top + _start.getGlobalBounds().height), 50)
+_quit("Выход", Vector2f(_start.getGlobalBounds().left, _start.getGlobalBounds().top + _start.getGlobalBounds().height), 50),
+_window(window), _event(event)
 {
 	_ButtFocus = start;
 }
-
 
 
 
@@ -27,6 +27,8 @@ bool pauseMenu::menuControl() {
 				switch (_ButtFocus)
 				{
 				case start:
+
+					ScreenManager::setCurrentScreen("startMenu");
 					return true;
 						break;
 				case quit:
@@ -42,27 +44,29 @@ bool pauseMenu::menuControl() {
 }
 
 void pauseMenu::drawButtons() {
+
 	_start.draw(_window);
 	_quit.draw(_window);
+
 }
 
 void pauseMenu::handleInput()
 {
 }
 
-void pauseMenu::update()
+void pauseMenu::update(float delta)
 {
 }
 
+
+
 void pauseMenu::draw() {
-	while (_window.isOpen())
-	{
+	
+	
 		if (menuControl())return;
 		if (_ButtFocus == start) { _start.setFocus(true); _quit.setFocus(false); }
 		if (_ButtFocus == quit) { _start.setFocus(false); _quit.setFocus(true); }
-		_window.clear();
+
 		drawButtons();
-		_window.display();
-	}
 }
 

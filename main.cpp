@@ -16,18 +16,19 @@ using namespace sf;
 int main()
 {
 	
-	/*Configuration config;
+	GameConfiguration config;
 	config.width = 1024;
 	config.height = 612;
+	config.frameRate = 60;
 	config.fullscreen = false;
 	config.window_title = "Alpha_Project_OnTesting";
 
 	Game game(config);
-	game.runGame();	   */
+	game.runGame();	   
 	
 
 	// все ,что ниже - только для теста 
-	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
+/*	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
 	Texture texture;
 
 	window.setFramerateLimit(60);
@@ -39,7 +40,7 @@ int main()
 	 
 	//startMenu menu(window);
 	
-	IAnimation *ExplosionAnim = new AnimationClass(texture, 4, 4, 2000.f, 0, 0, 64, 64);
+	std::shared_ptr<IAnimation> ExplosionAnim(new AnimationClass(texture, 4, 4, 2000.f, 0, 0, 64, 64));
 	ExplosionAnim->setSize(132, 132);
 	sf::Event event;
 	  Clock clock;
@@ -65,9 +66,9 @@ int main()
 
 		  window.clear(Color(123,123,213,132));
 
-		 ExplosionAnim->update(time);
-		 ExplosionAnim->draw(150, 200, window);
+		  ExplosionAnim->update(time);
+		  ExplosionAnim->draw(150, 200, window);
 		  window.display();
-	  }			  
+	  }*/			  
 	return 0;
 }

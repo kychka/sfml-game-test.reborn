@@ -33,7 +33,7 @@ void Button::draw(RenderWindow &window) {
 	else _text.setColor(Color::Blue);
 	
 	window.draw(_text);
-	std::cout << "here" << std::endl;
+	std::cout << "draw buttons" << std::endl;
 }
 void Button::setFocus(bool focus) {
 	_focus = focus;

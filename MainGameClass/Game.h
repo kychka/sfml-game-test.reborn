@@ -1,24 +1,21 @@
 #pragma once
 #include <string>
 #include <SFML/Graphics.hpp>
-
+#include "GameConfiguration.h"
+#include "../Screens/ScreenManager/ScreenManager.h"
 using namespace sf;
 
-struct Configuration
-{
-	int width, height;
-	bool fullscreen;
-	std::string window_title;
-};
+
+
 
 
 class Game
 {
 private:
 
-	/*static*/RenderWindow *window;
-	Event event;
-	Clock clock;
+	sf::RenderWindow window;
+	sf::Event event;		 // для будущего 
+	//Clock clock;		 //			    функционала
 	float delta;
 
 	void computeDelta();
@@ -29,7 +26,7 @@ private:
 	
 public:
 
-	Game(Configuration &config);
+	Game(GameConfiguration &config);
 
 	void  runGame();
 

@@ -1,23 +1,27 @@
 #include "Game.h"
-#include "../Screens/Menu/StartMenu.h"
-#include <SFML/Graphics.hpp>
+
+#include <iostream>
 
 
-Game::Game(Configuration &config)
+
+
+Game::Game(GameConfiguration &config)
 {
 	sf::Uint32 style = config.fullscreen ? sf::Style::Fullscreen : sf::Style::Close;
-	window = new RenderWindow(sf::VideoMode(config.width, config.height), config.window_title, style);
+	window.create(sf::VideoMode(config.width, config.height), config.window_title, style);
+	window.setFramerateLimit(config.frameRate);
+
+	ScreenManager::init(window, event);
 }
 
 void Game::runGame()
 {
-	startMenu menu(*window);
+	
+	while ( window.isOpen() ) {
 
-	while (window->isOpen()) {
-		menu.draw();
 		 handleInput();
 		 update();
-		draw();
+		 draw();
 	}
 	
 }
@@ -26,10 +30,8 @@ void Game::runGame()
 
 void Game::handleInput()
 {
-	while (window->pollEvent(event)) {
 
-		if (event.type == Event::Closed) window->close();
-	}
+	//if (event.type == Event::Closed) window.close();
 }
 
 void Game::update()
@@ -38,17 +40,20 @@ void Game::update()
 
 void Game::draw()
 {
-	window->clear(Color(0, 168, 0, 133));
-	window->display();
+	//std::cout << "drawHERE" << std::endl;
+	window.clear();
+	ScreenManager::draw();
+	window.display();
+	
 }
 
 
 void Game::computeDelta()
 {
-
+	//delta = clock.getElapsedTime().asMicroseconds();
 }
 
 Game::~Game()
 {
-	delete window;
+	
 }

@@ -40,6 +40,7 @@ AnimationClass::AnimationClass(sf::Texture &texture, int frameCountX, int frameC
 
 AnimationClass::~AnimationClass()
 {
+	
 }
 
 void AnimationClass::flip(bool flipX, bool flipY)
