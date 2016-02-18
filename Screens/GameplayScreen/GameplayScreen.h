@@ -11,7 +11,6 @@ public:
 	sf::Event &_event;
 	std::shared_ptr<IAnimation> ExplosionAnim;
 	sf::Texture texture;
-	sf::Clock clock;
 
 	  // тут добавляем всяких сущностей типа героя, камеры и тд.
 	 // это окно предназначено для вызовов методов героя,камеры и тд.

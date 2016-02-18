@@ -15,6 +15,9 @@ GameplayScreen::GameplayScreen(sf::RenderWindow &window, sf::Event &event) :
 		std::cout << " download failed! ";
 		exit(123);
 	}
+
+	// ÒÓÒ ß ÏÎÒÅÑÒÈË ÀÍÈÌÀÖÈÞ.		
+
 	// ñoçäàåì àíèìàöèþ 
 	ExplosionAnim = std::make_shared<AnimationClass>(AnimationClass(texture, 4, 4, 1000.f, 0, 0, 64, 64));
 	ExplosionAnim->setSize(256,256);
