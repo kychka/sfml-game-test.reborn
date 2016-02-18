@@ -1,5 +1,4 @@
 #pragma once
-
 #include"Entity.h"
 
 using namespace sf;
@@ -7,14 +6,13 @@ using namespace sf;
 class Hero:public Entity
 {
 public:
-	Hero();
-	~Hero();
+					Hero(lv::Level &lvl);
+					~Hero();
 
-	void			setHeroPosition(float posX, float posY);
+	void			checkCollision(float dX, float dY);
 	void			control();
 	void			states();
 	void			update(float time);
-	Vector2f		getHeroPosition();
 
 private:
 	enum{stay, jump, walk_r, walk_l} _state; //Состояния, стоять, прыжок, идти вправо(walk_right), идти влево(walk_left)
