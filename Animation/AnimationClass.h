@@ -1,5 +1,6 @@
 #pragma once
 #include "IAnimation.h"
+#include<memory>
 
 class AnimationClass : public IAnimation
 {
@@ -20,6 +21,6 @@ public:
 	virtual void flip(bool flipX, bool flipY) override;
 	virtual void setSize(int width, int height) override;
 	virtual void update(float deltaTime) override;
-	virtual void draw(float posX, float posY, sf::RenderWindow & window) override;
+	virtual void draw(float posX, float posY, sf::RenderWindow &window) override;
 };
 

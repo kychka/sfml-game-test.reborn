@@ -29,11 +29,15 @@ void Game::runGame(){
 
 void Game::handleInput(){
 
-	ScreenManager::handleInput();
+	while (window.pollEvent(event))
+	{
+		 ScreenManager::handleInput();
+	}
+	
 }
 
 void Game::update(){
-	
+	// дельта пока бездействует
 	ScreenManager::update(delta);
 }
 

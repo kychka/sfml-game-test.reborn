@@ -24,7 +24,7 @@ int main()
 	config.window_title = "Alpha_Project_OnTesting";
 
 	Game game(config);
-	game.runGame();	   
+	game.runGame();	  
 	
 
 	// все ,что ниже - только для теста 
@@ -69,6 +69,6 @@ int main()
 		  ExplosionAnim->update(time);
 		  ExplosionAnim->draw(150, 200, window);
 		  window.display();
-	  }*/			  
+	  }		*/	  
 	return 0;
 }

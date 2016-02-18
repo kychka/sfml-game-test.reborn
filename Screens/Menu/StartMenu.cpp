@@ -15,7 +15,7 @@ startMenu::startMenu(RenderWindow &window, Event &event) :
 
 void startMenu::handleInput()
 {
-	
+	menuControl();
 }
 
 
@@ -28,7 +28,6 @@ void startMenu::update(float delta) {
 
 void startMenu::draw() {
 
-	if (menuControl()) return;
 	if (_ButtFocus == start) { _start.setFocus(true); _options.setFocus(false); _autors.setFocus(false); _quit.setFocus(false); }
 	if (_ButtFocus == option) { _start.setFocus(false); _options.setFocus(true); _autors.setFocus(false); _quit.setFocus(false); }
 	if (_ButtFocus == autors) { _start.setFocus(false); _options.setFocus(false); _autors.setFocus(true); _quit.setFocus(false); }
@@ -38,19 +37,15 @@ void startMenu::draw() {
 }  
 
 void startMenu::drawButtons()
-{	
-	  
+{		  
 	_start.draw(_window);
 	_options.draw(_window);
 	_autors.draw(_window);
 	_quit.draw(_window);
-	
 }
 
 bool startMenu::menuControl() {
-	//std::cout << "in menu control 1" << std::endl;
-	while (_window.pollEvent(_event)) {
-		std::cout << "in menu control 2" << std::endl;
+	//while (_window.pollEvent(_event)) {
 			if (_event.type == Event::Closed) _window.close();
 			if (_event.type == Event::KeyReleased) {
 				if (_event.key.code == Keyboard::Up)
@@ -62,6 +57,7 @@ bool startMenu::menuControl() {
 				if (_event.key.code == Keyboard::Return) {
 					switch (_ButtFocus) {
 					case start:
+
 						ScreenManager::setCurrentScreen("pauseMenu");
 						return true;
 						break;
@@ -79,7 +75,7 @@ bool startMenu::menuControl() {
 				}
 				
 			}
-		}
+		//}
 	return false;
 
 }

@@ -25,7 +25,6 @@ AnimationClass::AnimationClass(sf::Texture &texture, int frameCountX, int frameC
 
 		for (int j = 0; j < frameCountX; ++j) {// добавляем в frames каждый раз новый textureRegion
 											   // где i * frameWidth это начало вырезания кадра из текстуры
-			
 			frames.push_back(make_shared<sf::Sprite>(sf::Sprite(texture, sf::IntRect(x + (frameWidth*j), y + (frameHeight*i), frameWidth, frameHeight))));
 		}
 	}

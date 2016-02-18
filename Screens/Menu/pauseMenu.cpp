@@ -12,7 +12,7 @@ _window(window), _event(event)
 
 
 bool pauseMenu::menuControl() {
-	while (_window.pollEvent(_event)) {
+	//while (_window.pollEvent(_event)) {
 		if (_event.type == Event::Closed)_window.close();
 		if (_event.type == Event::KeyReleased) {
 			if (_event.key.code == Keyboard::Up) {
@@ -39,7 +39,7 @@ bool pauseMenu::menuControl() {
 				}
 			}
 		}
-	}
+	//}
 	return false;
 }
 
@@ -52,6 +52,7 @@ void pauseMenu::drawButtons() {
 
 void pauseMenu::handleInput()
 {
+	menuControl();
 }
 
 void pauseMenu::update(float delta)
@@ -62,7 +63,7 @@ void pauseMenu::update(float delta)
 
 void pauseMenu::draw() {
 	
-	if (menuControl())return;
+	//if (menuControl())return;
 	if (_ButtFocus == start) { _start.setFocus(true); _quit.setFocus(false); }
 	if (_ButtFocus == quit) { _start.setFocus(false); _quit.setFocus(true); }
 

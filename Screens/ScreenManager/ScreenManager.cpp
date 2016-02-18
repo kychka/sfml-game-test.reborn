@@ -12,7 +12,7 @@ ScreenManager::ScreenManager(){
 	
 }
 
- /* осталось наполнить код сдесь всякими провеками, чтобы ничего не сломалось */
+ /* осталось наполнить код сдесь всякими проверками, чтобы ничего не сломалось */
 void ScreenManager::setCurrentScreen(std::string name){
 	// переходим на экран
 	currentScreen = screens.at(name);
@@ -25,7 +25,7 @@ void ScreenManager::init(sf::RenderWindow &window, sf::Event &event){
 	screens.emplace("startMenu", std::make_shared<startMenu>(window, event) );
 	screens.emplace("gameplay", std::make_shared<GameplayScreen>(window, event) );
 
-	setCurrentScreen("pauseMenu");
+	setCurrentScreen("startMenu");
 }
 
 void ScreenManager::handleInput(){
