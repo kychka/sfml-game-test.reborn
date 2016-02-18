@@ -30,7 +30,7 @@ AnimationClass::AnimationClass(sf::Texture &texture, int frameCountX, int frameC
 	}
 
 	maxFrameTime = cycleFrame / (frameCountX*frameCountY); // время проигрывания одного кадра узнается путем
-	std::cout << maxFrameTime ;							// время проигрывания всей анимации делёное на количество кадров
+						// время проигрывания всей анимации делёное на количество кадров
 	currentFrameTime = 0;
 	frame = 0;													   
 }

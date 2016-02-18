@@ -15,7 +15,7 @@ private:
 
 	sf::RenderWindow window;
 	sf::Event event;		 // для будущего 
-	//Clock clock;		 //			    функционала
+	Clock clock;		 //			    функционала
 	float delta;
 
 	void computeDelta();

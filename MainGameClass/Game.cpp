@@ -37,7 +37,9 @@ void Game::handleInput(){
 }
 
 void Game::update(){
-	// дельта пока бездействует
+	// 
+
+	computeDelta();
 	ScreenManager::update(delta);
 }
 
@@ -51,7 +53,8 @@ void Game::draw(){
 
 
 void Game::computeDelta(){
-	//delta = clock.getElapsedTime().asMicroseconds();
+	delta = clock.getElapsedTime().asMicroseconds() / 800;
+	clock.restart();
 }
 
 Game::~Game(){

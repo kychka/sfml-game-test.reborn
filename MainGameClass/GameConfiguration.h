@@ -7,6 +7,7 @@ public:
 	bool fullscreen;
 	std::string window_title;
 	unsigned int frameRate;
+
 	// тут вносить дополнительные данные для настройки
 };
 

@@ -23,9 +23,9 @@ void ScreenManager::init(sf::RenderWindow &window, sf::Event &event){
 	//добавляем экраны
 	screens.emplace("pauseMenu", std::make_shared<pauseMenu>(window, event) );
 	screens.emplace("startMenu", std::make_shared<startMenu>(window, event) );
-	screens.emplace("gameplay", std::make_shared<GameplayScreen>(window, event) );
+	screens.emplace("gameplay" ,  std::make_shared<GameplayScreen>(window, event) );
 
-	setCurrentScreen("startMenu");
+	setCurrentScreen("gameplay");
 }
 
 void ScreenManager::handleInput(){
@@ -34,7 +34,9 @@ void ScreenManager::handleInput(){
 }
 	
 void ScreenManager::update(float delta){
-	// delta пока бездействует
+	// d
+
+	
 	currentScreen->update(delta);
 }
 
