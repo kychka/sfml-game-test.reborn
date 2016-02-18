@@ -1,13 +1,17 @@
 #pragma once
+#include <SFML/Graphics.hpp>
 
-
-class abstractScreen
+class  AbstractScreen
 {
-protected:
-
 public:
-	abstractScreen();
-	virtual ~abstractScreen();
-	//
+
+	
+	
+	AbstractScreen() {};	// может  пригодится
+   
+	virtual void handleInput() = 0;
+	virtual void update(float delta) = 0;
+	virtual void draw() = 0;
+	virtual ~AbstractScreen() {}
 };
 

@@ -1,36 +1,47 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <iostream>
+#include <memory>
 #include "MainGameClass/Game.h"
-
+#include "Screens/Menu/pauseMenu.h"
 #include "Screens/Menu/StartMenu.h"
 #include "Animation/IAnimation.h"
 #include "Animation/AnimationClass.h"
+
 using namespace sf;
 
 
-#include "Screens/Menu/pauseMenu.h"
+
 
 int main()
 {
-				  
-	/* new Game().run(); */		
+	
+	GameConfiguration config;
+	config.width = 1024;
+	config.height = 612;
+	config.frameRate = 60;
+	config.fullscreen = false;
+	config.window_title = "Alpha_Project_OnTesting";
+
+	Game game(config);
+	game.runGame();	  
 	
 
 	// все ,что ниже - только для теста 
-	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
+/*	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
 	Texture texture;
 
 	window.setFramerateLimit(60);
 	if (!texture.loadFromFile("sfml-game-test.reborn/Resourses/Explosion.png"))
-	{
+	{	   
 		std::cout << " download failed! ";
 		exit(123);
 	}	 
-
+	 
 	//startMenu menu(window);
-	IAnimation *ExplosionAnimation = new AnimationClass(texture, 4, 4, 2000.f, 0, 0, 64, 64);
-
+	
+	std::shared_ptr<IAnimation> ExplosionAnim(new AnimationClass(texture, 4, 4, 2000.f, 0, 0, 64, 64));
+	ExplosionAnim->setSize(132, 132);
 	sf::Event event;
 	  Clock clock;
 	  while (window.isOpen())
@@ -51,13 +62,13 @@ int main()
 			  }
 		  }
 
-		 // menu.runMenu();
+		//  menu.runMenu();
 
-		  window.clear();
+		  window.clear(Color(123,123,213,132));
 
-		  ExplosionAnimation->update(time);
-		  ExplosionAnimation->draw(150.f, 150.f, window);
+		  ExplosionAnim->update(time);
+		  ExplosionAnim->draw(150, 200, window);
 		  window.display();
-	  }
+	  }		*/	  
 	return 0;
 }
