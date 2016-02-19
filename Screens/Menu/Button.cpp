@@ -8,14 +8,14 @@ Button::Button()
 
 Button::Button(String text, Vector2f position, unsigned int character_size)
 {
-	_font.loadFromFile("sfml-game-test.reborn/Resourses/CyrilicOld.ttf");
+	_font.loadFromFile("Resourses/CyrilicOld.ttf");
 	_text = Text(text, _font, character_size);
 	_text.setPosition(position);
 	_focus = false;
 	_isClicked = false;
 }
 Button::Button(String text, float position_x, float position_y, unsigned int character_size) {
-	_font.loadFromFile("sfml-game-test.reborn/Resourses/CyrilicOld.ttf");
+	_font.loadFromFile("Resourses/CyrilicOld.ttf");
 	_text = Text(text, _font, character_size);
 	_text.setPosition(Vector2f(position_x, position_y));
 	_focus = false;
