@@ -10,7 +10,7 @@ GameplayScreen::GameplayScreen(sf::RenderWindow &window, sf::Event &event) :
 {
 	
 
-	if (!texture.loadFromFile("Resourses/Explosion.png"))
+	if (!texture.loadFromFile("sfml-game-test.reborn/Resourses/Explosion.png"))
 	{
 		std::cout << " download failed! ";
 		exit(123);
