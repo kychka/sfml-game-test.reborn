@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../"
+#include "../../GameActors/Entity/Entity.h"
 class Gravitation
 {
 public:

@@ -2,11 +2,11 @@
 #include <SFML/System.hpp>
 #include <iostream>
 #include <memory>
-#include "MainGameClass/Game.h"
-#include "Screens/Menu/pauseMenu.h"
-#include "Screens/Menu/StartMenu.h"
-#include "Animation/IAnimation.h"
-#include "Animation/AnimationClass.h"
+#include "../sfml-game-test.reborn/DVIZHOK/MainGameClass/Game.h"
+#include "../sfml-game-test.reborn/DVIZHOK/Screens/Menu/pauseMenu.h"
+#include "../sfml-game-test.reborn/DVIZHOK/Screens/Menu/StartMenu.h"
+#include "../sfml-game-test.reborn/DVIZHOK/Animation/IAnimation.h"
+#include "../sfml-game-test.reborn/DVIZHOK/Animation/AnimationClass.h"
 
 using namespace sf;
 

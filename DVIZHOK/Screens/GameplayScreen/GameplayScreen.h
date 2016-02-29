@@ -2,6 +2,7 @@
 #include "../AbstractScreen/abstractScreen.h"
 #include <iostream>
 #include "../../Animation/AnimationClass.h"
+#include "../../../GAME/Actors/Player/Player.h"
 
 class GameplayScreen : public AbstractScreen
 {
@@ -9,7 +10,7 @@ public:
 
 	sf::RenderWindow &_window;
 	sf::Event &_event;
-	std::shared_ptr<IAnimation> ExplosionAnim;
+	Player player;
 	sf::Texture texture;
 
 	  // тут добавляем всяких сущностей типа героя, камеры и тд.
