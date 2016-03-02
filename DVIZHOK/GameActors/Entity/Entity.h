@@ -48,9 +48,9 @@ public:
 	void setVelocity(Vector2f &vel);
 	void setVelX(float vx);
 	void setVelY(float vy);
-	Vector2f getPosition();
-	Vector2f getVelocity();
-	FloatRect getRect();
+	Vector2f& getPosition();
+	Vector2f& getVelocity();
+	FloatRect& getRect();
 
 	virtual void setSize(float width, float height) = 0;
 	virtual void flip(bool flipX, bool flipY) = 0;

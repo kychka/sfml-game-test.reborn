@@ -53,7 +53,8 @@ void Game::draw(){
 
 
 void Game::computeDelta(){
-	delta = clock.getElapsedTime().asMicroseconds() / 800;
+	delta = clock.getElapsedTime().asSeconds() *1.291f;
+//	std::cout << "delta = " << delta << std::endl;
 	clock.restart();
 }
 

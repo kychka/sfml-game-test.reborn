@@ -76,17 +76,17 @@ void Entity::setVelY(float vy)
 	velocity.y = vy;
 }
 
-Vector2f Entity::getPosition()
+Vector2f& Entity::getPosition()
 {
 	return position;
 }
 
-Vector2f Entity::getVelocity()
+Vector2f& Entity::getVelocity()
 {
 	return velocity;
 }
 
-FloatRect Entity::getRect()
+FloatRect& Entity::getRect()
 {
 	return rectangle;
 }

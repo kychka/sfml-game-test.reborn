@@ -3,19 +3,25 @@
 #include "../IAnimation.h"
 #include <memory>
 #include <map>
+
+using std::shared_ptr;
+using std::map;
+using std::vector;
+
 class Animations
 {
 
 protected:
 
-	std::map<int, std::shared_ptr<IAnimation> > animations;
+	map<int, shared_ptr<IAnimation> > animations;
 
 public:
 
 	Animations();
 
+	vector<shared_ptr<IAnimation> > getAll();
 	virtual void init() = 0;
-	std::shared_ptr<IAnimation> get(int anim);
+	shared_ptr<IAnimation> get(int anim);
 	
 	virtual ~Animations();
 };

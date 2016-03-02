@@ -11,29 +11,31 @@ GameplayScreen::GameplayScreen(sf::RenderWindow &window, sf::Event &event) :
 	
 
 	player = Player(200, 190);
+	player.setSize(128, 128);
 	player.setCurrentAnimation(Entity::ANIM_JUMP);
-	// ТУТ Я ПОТЕСТИЛ АНИМАЦИЮ.		
-
-	// сoздаем анимацию 
-	//ExplosionAnim = std::make_shared<AnimationClass>(AnimationClass(texture, 4, 4, 1000.f, 0, 0, 64, 64));
-	//ExplosionAnim->setSize(256,256);
+	player.setCurrentState(Entity::ON_GROUND_STATE);
+	
 }
 
 
-void GameplayScreen::handleInput(){
+void GameplayScreen::handleInput()
+{
 	// 	тут обработка событий окна
 	if (_event.type == sf::Event::Closed)_window.close();
 }
 
-void GameplayScreen::update(float delta){
+void GameplayScreen::update(float delta)
+{
 	player.update(delta);
 }
 
-void GameplayScreen::draw(){
+void GameplayScreen::draw()
+{
 	player.draw(_window);
 }
 
 
-GameplayScreen::~GameplayScreen(){
+GameplayScreen::~GameplayScreen()
+{
 
 }

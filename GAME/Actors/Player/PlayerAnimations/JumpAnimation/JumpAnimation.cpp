@@ -9,7 +9,7 @@ JumpAnimation::JumpAnimation()
 	{
 		exit(123456);
 	}
-	jump = AnimationClass(texture, 4, 4, 1000.f, 0, 0, 64, 64);
+	jump = AnimationClass(texture, 4, 4, 1.f, 0, 0, 64, 64);
 }
 
 
@@ -22,7 +22,7 @@ void JumpAnimation::flip(bool flipX, bool flipY)
 	jump.flip(flipX, flipY);
 }
 
-void JumpAnimation::setSize(int width, int height)
+void JumpAnimation::setSize(float width, float height)
 {
 	jump.setSize(width, height);
 }

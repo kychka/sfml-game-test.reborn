@@ -3,10 +3,8 @@
 
 
 PlayerStates::PlayerStates()
-{
-	
+{	
 }
-
 
 PlayerStates::~PlayerStates()
 {

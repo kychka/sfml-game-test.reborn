@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "GameConfiguration.h"
 #include "../Screens/ScreenManager/ScreenManager.h"
+#include<iostream>
 using namespace sf;
 
 

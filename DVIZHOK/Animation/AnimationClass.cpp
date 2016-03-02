@@ -46,7 +46,7 @@ void AnimationClass::flip(bool flipX, bool flipY)
 {
 }
 
-void AnimationClass::setSize(int width, int height)
+void AnimationClass::setSize(float width, float height)
 {
 	for (auto v : frames) {
 
