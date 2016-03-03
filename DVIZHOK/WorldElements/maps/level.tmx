@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="15" tileheight="15" nextobjectid="16">
- <tileset firstgid="1" name="world" tilewidth="15" tileheight="15" tilecount="950">
-  <image source="sfml-game-test.reborn/WorldElements/Resourses/maps/images/world.png" trans="ffffff" width="571" height="386"/>
+ <tileset firstgid="1" name="world" tilewidth="15" tileheight="15" tilecount="950" columns="38">
+  <image source="sfml-game-test.reborn/DVIZHOK/WorldElements/maps/images/world.png" trans="ffffff" width="571" height="386"/>
  </tileset>
  <layer name="Слой тайлов 1" width="100" height="50">
   <data>

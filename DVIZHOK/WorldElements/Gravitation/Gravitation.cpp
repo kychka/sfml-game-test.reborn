@@ -23,11 +23,11 @@ void Gravitation::applyGravity(Entity &actor, float time)
 	Vector2f &speed = actor.getVelocity();
 	Vector2f &pos = actor.getPosition();
 
-	if(pos.y < 444)actor.setVelY(speed.y+GRAVITY);	// иф для теста
+	if(pos.y < 444)actor.setVelY(speed.y+GRAVITY);	// <- иф для теста
 	actor.setVelY(speed.y*time);
 	actor.setPosition(pos.x, pos.y + speed.y);
 	actor.setVelY(speed.y * (1 / time));	
-	if (pos.y > 444)
+	if (pos.y > 444)								 // <-для дебага
 	{
 		actor.setPosition(pos.x, 444);
 	}

@@ -29,7 +29,7 @@ Entity::Entity(float x, float y)
 	
 	
 	shape.setPosition(x, y);
-	shape.setFillColor(Color(12,223,190,132));
+	shape.setFillColor(Color(112,23,190,132));
 	shape.setSize(Vector2f(0,0));
 }
 

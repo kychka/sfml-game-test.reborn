@@ -35,7 +35,7 @@ void Game::handleInput(){
 	}
 	
 }
-
+					 
 void Game::update(){
 	// 
 

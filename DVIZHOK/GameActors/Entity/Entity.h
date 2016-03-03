@@ -19,7 +19,6 @@ class Entity
 
 protected:
 
-	
 
 	Vector2f position;
 	Vector2f velocity;
@@ -64,4 +63,4 @@ public:
 	virtual void draw(RenderWindow &window) = 0;
 };
 
-#endif // !ENTITY_H
+#endif // ENTITY_H

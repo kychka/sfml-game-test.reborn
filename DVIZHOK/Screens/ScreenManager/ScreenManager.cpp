@@ -25,7 +25,7 @@ void ScreenManager::init(sf::RenderWindow &window, sf::Event &event){
 	screens.emplace("startMenu", std::make_shared<startMenu>(window, event) );
 	screens.emplace("gameplay" ,  std::make_shared<GameplayScreen>(window, event) );
 
-	setCurrentScreen("gameplay");
+	setCurrentScreen("startMenu");
 }
 
 void ScreenManager::handleInput(){

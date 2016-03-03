@@ -58,7 +58,7 @@ bool startMenu::menuControl() {
 					switch (_ButtFocus) {
 					case start:
 
-						ScreenManager::setCurrentScreen("pauseMenu");
+						ScreenManager::setCurrentScreen("gameplay");
 						return true;
 						break;
 					case option:
